@@ -16,7 +16,7 @@ array[1..K] of int: Dk;    % Demanda global de energía para el período k
 array[1..K] of int: Rk;    % Reserva especificada de energía para el período k
 
 % Variables
-array[1..J, 1..K] of var int: pjk;  % Potencia generada por la utpee j en el período k
+array[1..J, 1..K] of var 0..max(Pj_): pjk;  % Potencia generada por la utpee j en el período k
 
 % Restricciones
 constraint forall(j in 1..J, k in 2..K) (
