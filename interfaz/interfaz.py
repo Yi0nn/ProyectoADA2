@@ -52,13 +52,20 @@ def mostrar_resultados():
 def main():
     global text_area
     ventana = tk.Tk()
-    ventana.title("Interfaz para ejecutar Minizinc")
+    ventana.title("ADA II")
+    ventana.configure(bg="#f1d7ff")
+    ventana.geometry("350x270")
+    ventana.resizable(False, False)
 
-    boton_seleccionar_archivo = tk.Button(ventana, text="Seleccionar Archivo", command=seleccionar_archivo)
-    boton_seleccionar_archivo.pack()
+    titulo_label = tk.Label(ventana, text="LECTOR DE MINIZINC", font=("Times New Roman", 14, "bold"), fg="#503459")
+    titulo_label.config(bg=ventana.cget('bg'))
+    titulo_label.pack(pady=10)
 
-    text_area = tk.Text(ventana, height=20, width=60)
+    text_area = tk.Text(ventana, height=10, width=40, state="disabled")
     text_area.pack()
+
+    boton_seleccionar_archivo = tk.Button(ventana, text="Seleccionar Archivo", command=seleccionar_archivo, bg="pink", font=("Times New Roman", 12, "bold"), fg="#503459", relief=tk.GROOVE, borderwidth=5)
+    boton_seleccionar_archivo.pack(pady=10)
 
     ventana.mainloop()
 
