@@ -44,10 +44,20 @@ def seleccionar_archivo():
         mostrar_resultados()
 
 def mostrar_resultados():
-    with open('salida.txt', 'r') as archivo_resultados:
-        resultados = archivo_resultados.read()
-        text_area.delete(1.0, tk.END)  # Limpiar el Text widget
-        text_area.insert(tk.END, resultados)
+    try:
+        with open('salida.txt', 'r') as archivo_resultados:
+            resultados = archivo_resultados.read()
+
+        if resultados:
+            text_area.config(state=tk.NORMAL)  
+            text_area.delete(1.0, tk.END)  
+            text_area.insert(tk.END, resultados)
+            text_area.config(state=tk.DISABLED)  
+        else:
+            print("El archivo de salida está vacío.")
+    except Exception as e:
+        print(f"Error al leer el archivo de salida: {str(e)}")
+
 
 def main():
     global text_area
