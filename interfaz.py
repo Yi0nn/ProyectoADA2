@@ -4,7 +4,7 @@ from tkinter import filedialog
 
 def leer_datos_desde_archivo(ruta_archivo):
     nombres_variables = [
-        "K", "J", "Ej", "Aj", "Gj", "Fj", "Vj", "Pj_lower", "Pj_upper",
+        "J", "K", "Ej", "Aj", "Gj", "Fj", "Vj", "Pj_lower", "Pj_upper",
         "Supj", "Infj", "P0j", "Dk", "Rk"
     ]
     with open(ruta_archivo, 'r') as archivo:
